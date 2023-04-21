@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 			p++;
 			if (*p == '%')
 			{
-				len += _putchar('%');
+				len += putchar('%');
 				continue;
 			}
 			while (get_flag(*p, &f))
@@ -41,9 +41,9 @@ int _printf(const char *format, ...)
 				? pfunc(args, &f)
 				: _printf("%%%c", *p);
 		} else
-			len += _putchar(*p);
+			len += putchar(*p);
 	}
-	_putchar(-1);
+	putchar(-1);
 	va_end(args);
 	return (len);
 
