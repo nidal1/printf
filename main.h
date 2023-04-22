@@ -41,4 +41,7 @@ int print_percent(va_list l, flags_t *f);
 int _putchar(char c);
 int _puts(char *str);
 int _printf(const char *format, ...);
+int print_binary(va_list types, char buffer[],
+		int flags, int width, int precision, int size);
+
 #endif
