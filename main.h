@@ -3,6 +3,10 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+
+#define UNUSED(x) (void)(x)
 
 /**
  * struct flags - struct containing flags to "turn on"
@@ -41,4 +45,6 @@ int print_percent(va_list l, flags_t *f);
 int _putchar(char c);
 int _puts(char *str);
 int _printf(const char *format, ...);
+int print_binary(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
 #endif
