@@ -3,11 +3,6 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
-
-#define UNUSED(x) (void)(x)
-
 
 /**
  * struct flags - struct containing flags to "turn on"
@@ -35,7 +30,7 @@ typedef struct printHandler
 	int (*f)(va_list ap, flags_t *f);
 } ph;
 
-/*prototypes*/
+
 int get_flag(char s, flags_t *f);
 int (*get_print(char s))(va_list, flags_t *);
 
@@ -46,7 +41,5 @@ int print_binary(va_list types);
 
 int _putchar(char c);
 int _puts(char *str);
-
-int _printf(const char *format, ...);
 
 #endif /* MAIN_H */
