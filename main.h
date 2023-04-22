@@ -30,16 +30,15 @@ typedef struct printHandler
 	int (*f)(va_list ap, flags_t *f);
 } ph;
 
-
 int get_flag(char s, flags_t *f);
 int (*get_print(char s))(va_list, flags_t *);
 
 int print_string(va_list l, flags_t *f);
 int print_char(va_list l, flags_t *f);
+
 int print_percent(va_list l, flags_t *f);
-int print_binary(va_list types);
 
 int _putchar(char c);
 int _puts(char *str);
-
-#endif /* MAIN_H */
+int _printf(const char *format, ...);
+#endif
