@@ -7,7 +7,7 @@
  * @arg_list: argument list containing the integer to be printed
  * Return: number of characters printed
  */
-int print_binary(va_list arg_list)
+int print_binary_test(va_list arg_list)
 {
 	unsigned int n = va_arg(arg_list, unsigned int);
 	int count = 0;
