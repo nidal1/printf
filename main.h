@@ -9,6 +9,8 @@ int _putchar(char c);
 int print_char(va_list arg_list);
 int print_string(va_list arg_list);
 int print_int(va_list arg_list);
+int print_percent(void);
+int print_literal(void);
 /* int print_binary(unsigned int num);*/
 /* int print_unsigned(va_list arg_list, int base);*/
 /* int print_octal(unsigned int num);*/

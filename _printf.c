@@ -52,10 +52,13 @@ int _printf(const char *format, ...)
 			case 'S':
 				count += print_nonprintable(va_arg(va_list, char*));
 				break;*/
-            default:
-                count += _putchar('%');
-                count += _putchar(format[i]);
+            case '%':
+                    count += print_percent();
                 break;
+            default:
+                count += print_literal();
+                count += _putchar(format[i]);
+                    break;
             }
         }
         else
