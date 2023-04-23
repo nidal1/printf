@@ -11,6 +11,7 @@
 
 #define F_MINUS 1
 #define F_ZERO 4
+#define F_HASH 8
 
 
 #define S_LONG 2
@@ -62,6 +63,8 @@ int write_unsigned(int is_negative, int ind,char buffer[],
 		int flags, int width, int precision, int size);
 nt print_unsigned(va_list types, char buffer[],int flags,
                 int width, int precision, int size);
+int print_octal(va_list types, char buffer[],
+        int flags, int width, int precision, int size);
 
 
 
