@@ -13,6 +13,7 @@ int print_nonprintable(char *str)
 	int count = 0;
 	int t = *str;
 	int num_digits = 0;
+	int d = (*str >> (4 * (num_digits - 1))) & 0xF;
 
 	while (*str != '\0')
 		if (*str < 32 || *str >= 127)
