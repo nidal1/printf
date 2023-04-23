@@ -18,6 +18,7 @@
 #define S_SHORT 1
 
 
+
 /**
  * struct printHandler - struct to choose the right function depending
  * on the format specifier passed to _printf()
