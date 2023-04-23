@@ -6,6 +6,8 @@
 
 int print_char(va_list arg_list);
 int print_string(va_list arg_list);
+int print_int(va_list arg_list);
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_binary(va_list args);
