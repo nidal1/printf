@@ -38,10 +38,6 @@ struct fmt
  */
 typedef struct fmt fmt_t;
 
-int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i,
-va_list list, char buffer[], int flags, int width, int precision, int size);
-
 
 /*prototypes*/
 int print_char(va_list arg_list);
@@ -56,6 +52,7 @@ long int convert_size_unsigned(unsigned long int num, int size);
 int get_size(const char *format, int *i);
 int write_unsigned(int is_negative, int ind,
         char buffer[], int flags, int width, int precision, int size);
+int get_flags(const char *format, int *i);
 int print_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_hexa(va_list types, char buffer[],
@@ -65,4 +62,4 @@ int print_upper_hexa(va_list types, char buffer[],
 int print_HExa(va_list types, char map_to[],char buffer[],int flags,
 		char flag_ch, int width, int precision, int size);
 
-#endif
+#endif /* MAIN_H */
