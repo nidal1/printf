@@ -32,6 +32,9 @@ int _printf(const char *format, ...)
                 case 'i':
                     count += print_int(arg_list);
                     break;
+				case 'b':
+					count += print_binary(arg_list);
+					break;
                 case '%':
                     _putchar('%');
                     count++;
