@@ -11,6 +11,7 @@ int print_string(va_list arg_list)
 {
 	char *s = va_arg(arg_list, char *);
 	int count = 0;
+
 	while (*s != '\0')
 	{
 		_putchar(*s++);

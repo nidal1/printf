@@ -21,11 +21,12 @@ int _printf(const char *format, ...)
 		{
 			if (*format++ == 'c')
 				count += print_char(arg_list);
-			else if(*format++ == 's')
+			else if (*format++ == 's')
 				count += print_string(arg_list);
-			else if(*format++ == '%'){
+			else if (*format++ == '%')
+			{
 				_putchar('%');
-					count++;
+				count++;
 			}
 		}
 		else
