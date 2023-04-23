@@ -8,6 +8,7 @@ int print_char(va_list arg_list);
 int print_string(va_list arg_list);
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_binary(va_list args);
+void int_binary(int num);
+void print_binary(int num);
 
 #endif /* MAIN_H */
