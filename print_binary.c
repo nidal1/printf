@@ -9,36 +9,34 @@
  */
 int print_binary(va_list args)
 {
-	int count;
+	int i, j;
+	int num = va_arg(args, int);
 
-	va_start(args, count);
-
-	for (int i = 0; i < count; i++)
+	for (i = 0; i < 32; i++)
 	{
-		int num = va_arg(args, int);
-
 		if (num == 0)
 		{
-			putchar('0');
-			putchar('\n');
+			_putchar('0');
+			_putchar('\n');
 		}
 		else
 		{
 			int binary[32];
-			int index = 0;
+
+			i = 0;
 
 			while (num > 0)
 			{
-				binary[index] = num % 2;
+				binary[i] = num % 2;
 				num /= 2;
-				index++;
+				i++;
 			}
-			for (int j = index - 1; j >= 0; j--)
+			for (j = i - 1; j >= 0; j--)
 			{
-				putchar(binary[j] + '0');
+				_putchar(binary[j] + '0');
 			}
-			putchar('\n');
+			_putchar('\n');
 		}
 	}
-	va_end(args);
+
 }
