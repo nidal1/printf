@@ -14,7 +14,6 @@ int print_hex_uppercase(unsigned int num);
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void int_binary(int num);
-void print_binary(int num);
+int print_binary(unsigned int num);
 
 #endif /* MAIN_H */

@@ -1,44 +1,42 @@
 #include "main.h"
+
 #include <stdarg.h>
 #include <stdio.h>
 
-void int_binary(int num);
-
 /**
- * int_binary - converts an unsigned int to binary
- * @n: number
- * Return: void
+ * print_binary - prints a converted unsigned int to binary
+ * avoiding leading zeros
+ * @num: input insigned integer
+ * Return: the number of digits printed as a counter
  */
-void int_binary(int num)
+int print_binary(unsigned int num)
 {
-	int i;
-	int avoiding_zero = 1;
+	int count = 0;
+	unsigned int m = 1 << 31;
+	int start = 0;
 
-	for (i = 31; i >= 0; i--)
+	while (m > 0)
 	{
-		if (num & (1 << i))
+		if (num & m)
 		{
 			_putchar('1');
-			avoiding_zero = 0;
+			count++;
+			start = 1;
 		}
-		else if (!avoiding_zero)
+		else
 		{
-			_putchar('0');
+			if (start)
+			{
+				_putchar('0');
+				count++;
+			}
 		}
+		m >>= 1;
 	}
-	if (avoiding_zero)
+	if (!start)
 	{
 		_putchar('0');
+		count++;
 	}
-}
-
-/**
- * print_binary - prints binary representation
- * @num: input number
- * Return: void
- */
-void print_binary(int num)
-{
-	int_binary(num);
-	_putchar("\n");
+	return (count);
 }
