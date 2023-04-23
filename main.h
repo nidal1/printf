@@ -61,11 +61,16 @@ int print_unsigned(va_list types, char buffer[],
 long int convert_size_unsigned(unsigned long int num, int size);
 int write_unsigned(int is_negative, int ind,char buffer[],
 		int flags, int width, int precision, int size);
-nt print_unsigned(va_list types, char buffer[],int flags,
+int print_unsigned(va_list types, char buffer[],int flags,
                 int width, int precision, int size);
 int print_octal(va_list types, char buffer[],
         int flags, int width, int precision, int size);
-
+int print_hexa(va_list types, char buffer[],
+        int flags, int width, int precision, int size);
+int print_upper_hexa(va_list types, char buffer[],
+        int flags, int width, int precision, int size);
+int print_HExa(va_list types, char map_to[], char buffer[],
+        int flags, char flag_ch, int width, int precision, int size);
 
 
 
