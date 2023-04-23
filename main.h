@@ -9,6 +9,12 @@
 #define UNUSED(x) (void)(x)
 #define BUFFER_SIZE 1024
 
+#define F_MINUS 1
+#define F_ZERO 4
+
+
+#define S_LONG 2
+#define S_SHORT 1
 
 /**
  * struct flags - struct containing flags to "turn on"
@@ -51,5 +57,13 @@ int print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
+long int convert_size_unsigned(unsigned long int num, int size);
+int write_unsigned(int is_negative, int ind,char buffer[],
+		int flags, int width, int precision, int size);
+nt print_unsigned(va_list types, char buffer[],int flags,
+                int width, int precision, int size);
+
+
+
 
 #endif
