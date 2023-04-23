@@ -1,10 +1,11 @@
 #include "main.h"
-
+#include <stdarg.h>
 /**
  * print_binary - prints an unsigned number
  * converted to binary
  * @args: list of arguments
  * Return: binary representation of unsingned int
+ * 0 if input int is 0
  */
 int print_binary(va_list args)
 {
