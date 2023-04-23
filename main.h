@@ -14,6 +14,6 @@ int print_unsigned(va_list arg_list, int base);
 int print_octal(unsigned int num);
 int print_hex(unsigned int num, int cap);
 int print_hex_uppercase(unsigned int num);
-
+int print_nonprintable(char *str);
 
 #endif /* MAIN_H */
