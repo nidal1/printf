@@ -19,7 +19,7 @@ int print_binary(unsigned int num)
 	{
 		if (num & m)
 		{
-			_putchar('1');
+			putchar('1');
 			count++;
 			start = 1;
 		}
@@ -27,7 +27,7 @@ int print_binary(unsigned int num)
 		{
 			if (start)
 			{
-				_putchar('0');
+				putchar('0');
 				count++;
 			}
 		}
@@ -35,7 +35,7 @@ int print_binary(unsigned int num)
 	}
 	if (!start)
 	{
-		_putchar('0');
+		putchar('0');
 		count++;
 	}
 	return (count);

@@ -14,7 +14,7 @@ int print_hex(unsigned int num, int cap)
 	char hex_digits[] = "0123456789abcdef";
 	char hex_digits_cap[] = "0123456789ABCDEF";
 	char buffer[1024];
-	int i, j, rem;
+	int i, rem;
 	int count = 0;
 
 	if (num == 0)
