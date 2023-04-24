@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_hex - prints an unsigned int in hexadecimal
+ * print_hexadecimal - prints an unsigned int in hexadecimal
  * lower if 'x' and upper if 'X'
  * @num: unsigned int
  * @format: format specifier
@@ -11,25 +11,29 @@
  */
 int print_hexadecimal(unsigned int num, char format)
 {
-	const char *hexa_chars = "0123456789abcdef";
+    char *hexa_chars;
+    char buff[9];
+    int i = 0, count = 0;
 
-	if (format == 'X')
-	{
-		hexa_chars = "0123456789ABCDEF";
-	}
+    hexa_chars = (format == 'X') ? "0123456789ABCDEF" : "0123456789abcdef";
 
-	char buff[32];
-	int i = 0, count = 0;
+    
+    do {
+        buff[i++] = hexa_chars[num % 16];
+        num /= 16;
+    } while (num && i < 8);
+    buff[i] = hexa_chars[num % 16];
 
-	while (num)
-	{
-		buff[i++] = hexa_chars[num % 16];
-		num /= 16;
-	}
-	do {
-		putchar(buff[i]);
-		count++;
-	} while (i--);
+    
+    while (i < 8) {
+        buff[++i] = '0';
+    }
 
-	return (count);
+    
+    do {
+        _putchar(buff[i]);
+        count++;
+    } while (i--);
+
+    return (count);
 }

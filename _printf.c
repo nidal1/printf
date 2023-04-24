@@ -25,20 +25,17 @@ int _printf(const char *format, ...)
             switch (format[i])
             {
             case 'c':
-                count += _putchar(va_arg(arg_list, int));
+                count += print_char(arg_list);
                 break;
             case 's':
-                count += _putchar(*(va_arg(arg_list, char *)));
+                count += print_string(arg_list);
                 break;
             case 'd':
             case 'i':
                 count += print_int(arg_list);
                 break;
-            /*case 'u':
-                count += print_unsigned(va_arg(arg_list, unsigned int), 10);
-                break;
-            case 'o':
-                count += print_unsigned(va_arg(arg_list, unsigned int), 8);
+            case 'b':
+                count += print_binary(va_arg(arg_list, unsigned int));
                 break;
             case 'x':
                 count += print_hexadecimal(va_arg(arg_list, unsigned int), 'x');
@@ -46,12 +43,16 @@ int _printf(const char *format, ...)
             case 'X':
                 count += print_hexadecimal(va_arg(arg_list, unsigned int), 'X');
                 break;
-            case 'b':
-                count += print_binary(va_arg(arg_list, unsigned int));
+            case 'o':
+                count += print_octal(va_arg(arg_list, unsigned int));
                 break;
+            case 'u':
+                count += print_unsigned(arg_list, 10);
+                break;
+            
 			case 'S':
 				count += print_nonprintable(va_arg(va_list, char*));
-				break;*/
+				break;
             case '%':
                     count += print_percent();
                 break;

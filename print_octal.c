@@ -11,23 +11,17 @@
  */
 int print_octal(unsigned int num)
 {
-	int count = 0;
-	/* initialize quotient and remainder */
-	unsigned int q = num / 8;
-	unsigned int r = num % 8;
-	/* max 32 octal digits */
-	char octal[32];
+    int count = 0;
+    unsigned int temp = num;
+    char octal[100];
 
-	octal[count++] = (char)(r + '0');
-	while (q != 0)
-	{
-		r = q % 8;
-		q /= 8;
-		octal[count++] = (char)(r + '0');
-	}
-	while (count > 0)
-	{
-		putchar(octal[--count]);
-	}
-	return (count);
+    do {
+        octal[count++] = (temp % 8) + '0';
+        temp /= 8;
+    } while (temp != 0);
+
+    while (count--)
+        _putchar(octal[count]);
+
+    return (count);
 }

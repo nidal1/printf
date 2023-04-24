@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * print_string - print_string and get the length of the string
@@ -14,7 +15,8 @@ int print_string(va_list arg_list)
 
 	while (*s != '\0')
 	{
-		_putchar(*s++);
+		_putchar(*s);
+		s++;
 		count++;
 	}
 	return (count);
