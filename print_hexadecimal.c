@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_hex - prints an unsigned int in hexadecimal
+ * print_hexadecimal - prints an unsigned int in hexa
  * lower if 'x' and upper if 'X'
  * @num: unsigned int
  * @format: format specifier
