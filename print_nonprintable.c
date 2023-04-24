@@ -11,44 +11,21 @@
 int print_nonprintable(char *str)
 {
 	int count = 0;
-	int t = *str;
-	int num_digits = 0;
-	int d = (*str >> (4 * (num_digits - 1))) & 0xF;
 
-	while (*str != '\0')
+	for (; *str; str++, count++)
+	{
 		if (*str < 32 || *str >= 127)
 		{
-			putchar('\\');
-			putchar('x');
-			if (*str < 16)
-			{
-				putchar('0');
-				count++;
-			}
-			while (t > 0)
-			{
-				t /= 16;
-				num_digits++;
-			}
-			int i;
-
-			for (i = 0; i < 2 - num_digits; i++)
-			{
-				putchar('0');
-				count++;
-			}
-			while (num_digits > 0)
-			{
-				putchar(d < 10 ? d + '0' : d - 10 + 'A');
-				count++;
-				num_digits--;
-			}
+			count += putchar('\\');
+			count += putchar('x');
+			count += putchar("0123456789ABCDEF"[(*str >> 4) & 0xF]);
+			count += putchar("0123456789ABCDEF"[*str & 0xF]);
 		}
 		else
 		{
-			putchar(*str);
-			count++;
+			count += putchar(*str);
 		}
-		str++;
+	}
+	putchar('\n');
 	return (count);
 }

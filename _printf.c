@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
                 break;
             
 			case 'S':
-				count += print_nonprintable(va_arg(va_list, char*));
+				count += print_nonprintable(va_arg(arg_list, char*));
 				break;
             case '%':
                     count += print_percent();

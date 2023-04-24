@@ -26,6 +26,7 @@ int main(void)
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     _printf("Unsigned octal:[%o]\n", ui);
     printf("Unsigned octal:[%o]\n", ui);
+    _printf("%S\n", "Best\nSchool");
     /*_printf("binary:[%b]\n", 98);
     printf("binary:[%b]\n", 98);
     _printf("Unsigned:[%u]\n", ui);
