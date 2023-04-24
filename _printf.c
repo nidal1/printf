@@ -49,10 +49,9 @@ int _printf(const char *format, ...)
             case 'u':
                 count += print_unsigned(arg_list, 10);
                 break;
-            
-			case 'S':
-				count += print_nonprintable(va_arg(arg_list, char*));
-				break;
+	    case 'S':
+		count += print_nonprintable(va_arg(arg_list, char*));
+		break;
             case '%':
                     count += print_percent();
                 break;
