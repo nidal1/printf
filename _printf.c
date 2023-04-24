@@ -28,13 +28,13 @@ int _printf(const char *format, ...)
                 count += _putchar(va_arg(arg_list, int));
                 break;
             case 's':
-                count += _putchar(va_arg(arg_list, char *));
+                count += _putchar(*(va_arg(arg_list, char *)));
                 break;
             case 'd':
             case 'i':
-                count += print_int(va_arg(arg_list, int));
+                count += print_int(arg_list);
                 break;
-            case 'u':
+            /*case 'u':
                 count += print_unsigned(va_arg(arg_list, unsigned int), 10);
                 break;
             case 'o':
@@ -49,13 +49,16 @@ int _printf(const char *format, ...)
             case 'b':
                 count += print_binary(va_arg(arg_list, unsigned int));
                 break;
-	    case 'S':
-		count += print_nonprintable(va_arg(va_list, char*));
-		break;
-            default:
-                count += _putchar('%');
-                count += _putchar(format[i]);
+			case 'S':
+				count += print_nonprintable(va_arg(va_list, char*));
+				break;*/
+            case '%':
+                    count += print_percent();
                 break;
+            default:
+                count += print_literal();
+                count += _putchar(format[i]);
+                    break;
             }
         }
         else

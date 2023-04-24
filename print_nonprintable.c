@@ -17,6 +17,7 @@ int print_nonprintable(char *str)
 
 	while (*str != '\0')
 		if (*str < 32 || *str >= 127)
+		{
 			putchar('\\');
 			putchar('x');
 			if (*str < 16)
@@ -42,6 +43,7 @@ int print_nonprintable(char *str)
 				count++;
 				num_digits--;
 			}
+		}
 		else
 		{
 			putchar(*str);
