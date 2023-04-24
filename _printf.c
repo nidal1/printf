@@ -41,10 +41,10 @@ int _printf(const char *format, ...)
                 count += print_unsigned(va_arg(arg_list, unsigned int), 8);
                 break;
             case 'x':
-                count += print_hex(va_arg(arg_list, unsigned int), 0);
+                count += print_hexadecimal(va_arg(arg_list, unsigned int), 'x');
                 break;
             case 'X':
-                count += print_hex_uppercase(va_arg(arg_list, unsigned int));
+                count += print_hexadecimal(va_arg(arg_list, unsigned int), 'X');
                 break;
             case 'b':
                 count += print_binary(va_arg(arg_list, unsigned int));
