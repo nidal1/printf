@@ -10,7 +10,6 @@ int _printf(const char *format, ...)
 	int i, pri = 0, char_printed = 0;
 	int flags, width, prec, size, buff_ind = 0;
 	va_list arg_list;
-	const int BUFFER_SIZE = 1024;
 	char buffer[BUFFER_SIZE];
 
 	if (format == NULL)
