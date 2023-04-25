@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 #define UNUSED(x) (void)(x)
-#define BUFFER_SIZE 1024
+/*#define BUFFER_SIZE 1024 */
 
 #define FLAG_MINUS 1
 #define FLAG_PLUS 2
